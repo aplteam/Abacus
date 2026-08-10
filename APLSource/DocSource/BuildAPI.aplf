@@ -25,7 +25,7 @@
      fn←(3=#.Abacus.Main.⎕NC fn)/fn
      _←##.API.⎕FX¨{
          d←'     ⍝ Documentation: #.Abacus.DocSource.FunctionReference.',⍵
-         (⊂⍵,'←{'),(⊂'     ⍺←⊢    ⍝ default ⍺ so a monadic call passes straight through'),(⊂'     ⍝ ⍵ ←→ argument')d('⍺ A.',⍵,' ⍵')'}'
+         (⊂⍵,'←{'),(⊂'     ⍺←⊢    ⍝ default ⍺ so a monadic call passes straight through'),(⊂'     ⍝ ⍵ ←→ argument'),d('⍺ A.',⍵,' ⍵')'}'
      }¨fn
      0
  }
