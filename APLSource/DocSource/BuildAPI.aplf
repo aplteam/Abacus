@@ -18,5 +18,14 @@
          _←s ⎕VSET(b/t[;2]){⍺ ⍵}¨v
          0
      }¨∪t[;0]
+     ⍝ Top-level covers for documented free functions (FunctionReference); the nameclass filter
+     ⍝ skips test-suite helpers that RunTests injects and that are not Main functions.
+     ##.API.A←#.Abacus.Main
+     fn←FunctionReference.⎕NL ¯2
+     fn←(3=#.Abacus.Main.⎕NC fn)/fn
+     _←##.API.⎕FX¨{
+         d←'     ⍝ Documentation: #.Abacus.DocSource.FunctionReference.',⍵
+         (⊂⍵,'←{'),(⊂'     ⍺←⊢    ⍝ default ⍺ so a monadic call passes straight through'),(⊂'     ⍝ ⍵ ←→ argument')d('⍺ A.',⍵,' ⍵')'}'
+     }¨fn
      0
  }
